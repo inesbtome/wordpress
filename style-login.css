@@ -1,0 +1,104 @@
+body.login {
+  		/*background-image: url(https://image.freepik.com/fotos-gratis/praia-tropical_74190-188.jpg);
+    	background-repeat: no-repeat;
+    	background-size: 100% 100%; */
+		background-color: #a9d8f9;
+		}
+		body.login div#login {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		body.login div#login h1 {
+			border-radius: 50%;
+			background-color: #a9d8f9;
+			width: 100px;
+			height: 100px;
+			padding: 10px;
+			position: relative;
+    		top: 78px;
+		}
+        #login h1 a, .login h1 a {
+        background-image: url(https://wordpress-413358-1306123.cloudwaysapps.com/wp-content/uploads/2020/11/logo-scaled-e1604493502613.jpg);
+		height:100px;
+		width:100px;
+		background-size: 100px;
+		border-radius: 50%;
+		}
+		body.login div#login form#loginform {
+    	padding-top: 80px;
+		padding-bottom: 10px;
+		background: rgba(255,255,255,1);
+		border: none;
+		border-radius: 4px 4px 0px 0px;
+		}
+		body.login div#login form#loginform label {
+    	color: #686868;
+    	font-weight: 600;
+    	/* font-family: "Poppins"; */
+		}		
+		body.login div#login form#loginform input#user_login, body.login div#login form#loginform input#user_pass
+		{
+		background: none;
+		border-top: 0;
+		border-left: 0;
+		border-right: 0;
+		border-radius: 0;
+		border-bottom: 1.5px solid lightgray;
+		font-size: 16px;
+		}
+		body.login div#login form#loginform input:focus {
+			outline: none;
+			box-shadow: none;
+			border-width: 2px;
+		}
+		body.login div#login form#loginform p.forgetmenot label {
+    	font-weight: normal;
+    	font-size: 12px;
+    	text-decoration: underline;
+		}
+		body.login div#login form#loginform p input[type=checkbox] {
+			
+			border-color: lightgray;
+			border-radius: 2px;
+			margin-right: 8px;
+		}
+		body.login div#login form#loginform p.forgetmenot {
+    	display: flex;
+    	width: 100%;
+    	align-items: center;
+		}
+		body.login div#login form#loginform p.submit input#wp-submit {
+		background-color: #df2034;
+		border: 1px solid #df2034;
+		width: 100%;
+		margin-top: 24px;
+		text-transform: uppercase;
+		font-weight: 600;
+		letter-spacing: 1px;
+		padding: 2px 0;
+		}
+		body.login div#login p#nav, body.login div#login p#backtoblog {
+		width: 272px;
+		background: rgba(255,255,255,1);
+		position: relative;
+		margin: 0;
+		text-align: center;
+		
+		}
+		
+		body.login div#login p#nav a {
+		font-weight: normal;
+    	font-size: 12px;
+    	text-decoration: underline;
+		}
+		body.login div#login p#backtoblog {
+		padding-top: 10px;
+		padding-bottom: 30px;
+		}
+		
+		
+		body.login div#login p#backtoblog a {
+		font-size: 12px;
+		font-weight: 600;	
+		}
