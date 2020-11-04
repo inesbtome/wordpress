@@ -36,3 +36,14 @@ function remove_dashboard_meta() {
 }
 add_action( 'admin_init', 'remove_dashboard_meta' );
 
+
+//Remove Options Screen if not Admin
+
+function wpb_remove_screen_options() { 
+if(!current_user_can('manage_options')) {
+return false;
+}
+return true; 
+}
+add_filter('screen_options_show_screen', 'wpb_remove_screen_options');
+
