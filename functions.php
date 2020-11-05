@@ -47,3 +47,23 @@ return true;
 }
 add_filter('screen_options_show_screen', 'wpb_remove_screen_options');
 
+//Change Greeting
+
+function et_custom_admin_bar_greeting_text( $wp_admin_bar ) {
+  $user_data         = wp_get_current_user();
+  $user_display_name = isset( $user_data->display_name ) ? $user_data->display_name : false;
+  $user_id           = isset( $user_data->ID ) ? (int) $user_data->ID : 0;
+  if ( ! $user_id || ! $user_display_name ) {
+    return;
+  }  $user_avatar = get_avatar( $user_id, 26 );  // translators: %s: Current user's display name
+  $my_account_text = sprintf(
+    __( 'Hello, %s' ),
+    '<span class="display-name">' . esc_html( $user_data->display_name ) . '</span>'
+  );  $wp_admin_bar->add_node(
+    array(
+      'id'    => 'my-account',
+      'title' => $my_account_text . $user_avatar,
+    )
+  );
+}
+add_action( 'admin_bar_menu', 'et_custom_admin_bar_greeting_text' );
