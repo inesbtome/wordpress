@@ -89,3 +89,24 @@ wp_add_dashboard_widget('dv_custom_help_widget', 'Theme Support', 'dv_custom_das
 function dv_custom_dashboard_help() {
 echo '<p>Welcome to Custom Blog Theme! Need help? Contact the developer <a href="mailto:yourusername@gmail.com">here</a>. For WordPress Tutorials visit: <a href="https://www.wpbeginner.com" target="_blank">DViral Solutions</a></p>';
 }
+
+//Remove or change icon/logo in admin
+
+function dv_custom_admin_styles() { ?>
+    <style type="text/css">
+		
+		
+		#wpadminbar>#wp-toolbar>#wp-admin-bar-root-default>#wp-admin-bar-wp-logo {
+			display: none;
+		}
+
+		#wpadminbar>#wp-toolbar>#wp-admin-bar-root-default>#wp-admin-bar-wp-logo .ab-item .ab-icon:before {
+			content: url("https://via.placeholder.com/16");
+			position: relative;
+		}
+	
+	
+    </style>
+<?php }
+add_action( 'admin_enqueue_scripts', 'dv_custom_admin_styles' );
+
