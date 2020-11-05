@@ -110,3 +110,15 @@ function dv_custom_admin_styles() { ?>
 <?php }
 add_action( 'admin_enqueue_scripts', 'dv_custom_admin_styles' );
 
+//Remove Template (Elementor Menu Admin) if Not Administrator
+
+function dv_remove_comments_menu_item() {
+    $user = wp_get_current_user();
+    if ( ! $user->has_cap( 'manage_options' ) ) {
+        remove_menu_page( 'edit.php?post_type=elementor_library' );
+    }
+}
+add_action( 'admin_menu', 'dv_remove_comments_menu_item' );
+
+//Sources for other Elementor Menu admin https://plugintests.com/plugins/wporg/elementor/tips
+
