@@ -75,3 +75,17 @@ function dv_custom_change_admin_footer_text () {
   return __( 'Theme designed by <a href="https://dviralsolutions.pt/">DViral Solutions</a>.', 'dv_custom-text-domain' );
 }
 add_filter( 'admin_footer_text', 'dv_custom_change_admin_footer_text' );?>
+
+//Custom Dashboard Box
+
+add_action('wp_dashboard_setup', 'dv_my_custom_dashboard_widgets');
+  
+function dv_my_custom_dashboard_widgets() {
+global $wp_meta_boxes;
+ 
+wp_add_dashboard_widget('dv_custom_help_widget', 'Theme Support', 'dv_custom_dashboard_help');
+}
+ 
+function dv_custom_dashboard_help() {
+echo '<p>Welcome to Custom Blog Theme! Need help? Contact the developer <a href="mailto:yourusername@gmail.com">here</a>. For WordPress Tutorials visit: <a href="https://www.wpbeginner.com" target="_blank">DViral Solutions</a></p>';
+}
