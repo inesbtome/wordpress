@@ -67,3 +67,8 @@ function et_custom_admin_bar_greeting_text( $wp_admin_bar ) {
   );
 }
 add_action( 'admin_bar_menu', 'et_custom_admin_bar_greeting_text' );
+
+function custom_change_admin_footer_text () {
+  return __( 'Theme designed by <a href="https://dviralsolutions.pt/">DViral Solutions</a>.', 'custom-text-domain' );
+}
+add_filter( 'admin_footer_text', 'custom_change_admin_footer_text' );?>
