@@ -122,3 +122,12 @@ add_action( 'admin_menu', 'dv_remove_comments_menu_item' );
 
 //Sources for other Elementor Menu admin https://plugintests.com/plugins/wporg/elementor/tips
 
+//Remove any menu item if not administrator - example tools
+
+function dv_remove_tools_menu_item() {
+    $user = wp_get_current_user();
+    if ( ! $user->has_cap( 'manage_options' ) ) {
+        remove_menu_page( 'tools.php' ); //to know the slug just hover it and check the link address
+    }
+}
+add_action( 'admin_menu', 'dv_remove_tools_menu_item' );
