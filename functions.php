@@ -49,7 +49,7 @@ add_filter('screen_options_show_screen', 'wpb_remove_screen_options');
 
 //Change Greeting
 
-function et_custom_admin_bar_greeting_text( $wp_admin_bar ) {
+function dv_custom_admin_bar_greeting_text( $wp_admin_bar ) {
   $user_data         = wp_get_current_user();
   $user_display_name = isset( $user_data->display_name ) ? $user_data->display_name : false;
   $user_id           = isset( $user_data->ID ) ? (int) $user_data->ID : 0;
@@ -66,9 +66,12 @@ function et_custom_admin_bar_greeting_text( $wp_admin_bar ) {
     )
   );
 }
-add_action( 'admin_bar_menu', 'et_custom_admin_bar_greeting_text' );
+add_action( 'admin_bar_menu', 'dv_custom_admin_bar_greeting_text' );
 
-function custom_change_admin_footer_text () {
-  return __( 'Theme designed by <a href="https://dviralsolutions.pt/">DViral Solutions</a>.', 'custom-text-domain' );
+
+//Change Footer Text
+
+function dv_custom_change_admin_footer_text () {
+  return __( 'Theme designed by <a href="https://dviralsolutions.pt/">DViral Solutions</a>.', 'dv_custom-text-domain' );
 }
-add_filter( 'admin_footer_text', 'custom_change_admin_footer_text' );?>
+add_filter( 'admin_footer_text', 'dv_custom_change_admin_footer_text' );?>
