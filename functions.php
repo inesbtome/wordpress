@@ -178,7 +178,7 @@ function dv_custom_link_admin_bar() {
 			$wp_admin_bar->add_menu( array(
 			'parent' => false,
 			'id' => 'new-product',
-			'title' => '<span style="top:4px;" class="ab-icon dashicons dashicons-plus"></span> <span class="ab-label">'. __('Add New Product') .'</span>',
+			'title' => '<span style="top:4px;" class="ab-icon dashicons dashicons-plus"></span> <span class="ab-label">'. __('Add new product', 'woocommerce') .'</span>',
 			'href' => $createProductURL
 			));
 
