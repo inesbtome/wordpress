@@ -168,3 +168,21 @@ return($tabs);
 	}
 
 add_filter('woocommerce_product_data_tabs', 'dv_remove_tab'	);
+
+
+// Add a new top level menu link to the admin bar
+
+function dv_custom_link_admin_bar() {
+
+			$createProductURL = '/wp-admin/post-new.php?post_type=product';
+			$wp_admin_bar->add_menu( array(
+			'parent' => false,
+			'id' => 'new-product',
+			'title' => '<span style="top:4px;" class="ab-icon dashicons dashicons-plus"></span> <span class="ab-label">'. __('Add New Product') .'</span>',
+			'href' => $createProductURL
+			));
+
+}
+			
+
+add_action( 'wp_before_admin_bar_render', 'dv_custom_link_admin_bar' );
