@@ -154,3 +154,17 @@ function dv_remove_product_custom_fields() {
 }
 		
    add_action( 'add_meta_boxes_product' , 'dv_remove_product_custom_fields' );
+
+//Remove any tab in edit product page
+
+function dv_remove_tab($tabs){
+	//unset($tabs['general']); // it is to remove general tab
+	//unset($tabs['inventory']); // it is to remove inventory tab
+	unset($tabs['advanced']); // it is to remove advanced tab
+	//unset($tabs['linked_product']); // it is to remove linked_product tab
+	//unset($tabs['attribute']); // it is to remove attribute tab
+	//unset($tabs['variations']); // it is to remove variations tab
+return($tabs);
+	}
+
+add_filter('woocommerce_product_data_tabs', 'dv_remove_tab'	);
