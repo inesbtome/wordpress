@@ -174,15 +174,29 @@ add_filter('woocommerce_product_data_tabs', 'dv_remove_tab'	);
 
 function dv_custom_link_admin_bar() {
 
-			$createProductURL = '/wp-admin/post-new.php?post_type=product';
-			$wp_admin_bar->add_menu( array(
-			'parent' => false,
-			'id' => 'new-product',
-			'title' => '<span style="top:4px;" class="ab-icon dashicons dashicons-plus"></span> <span class="ab-label">'. __('Add new product', 'woocommerce') .'</span>',
-			'href' => $createProductURL
+	$createProductURL = '/wp-admin/post-new.php?post_type=product';
+	$wp_admin_bar->add_menu( array(
+	'parent' => false,
+	'id' => 'new-product',
+	'title' => '<span style="top:4px;" class="ab-icon dashicons dashicons-plus"></span> <span class="ab-label">'. __('Add new product', 'woocommerce') .'</span>',
+	'href' => $createProductURL
 			));
 
 }
 			
 
 add_action( 'wp_before_admin_bar_render', 'dv_custom_link_admin_bar' );
+
+//check admin menu array with style to see good in browser
+
+function dv_check_admin_menu_array() {
+    global $menu;
+    global $submenu;
+ 	echo '<pre style="margin-left:200px;">';
+    print_r($menu);
+	print_r($submenu);
+	echo '</pre>';
+    
+    
+}
+add_action( 'admin_menu', 'dv_check_admin_menu_array' );
