@@ -145,3 +145,12 @@ function remove_shopmanager_list_users() {
     $role->remove_cap( 'list_users' );
 }
 add_action( 'init', 'remove_shopmanager_list_users' );
+
+// Remove meta box from Product Page
+
+function dv_remove_product_custom_fields() {
+    remove_meta_box( 'postexcerpt' , 'product' , 'normal' ); 
+    remove_meta_box( 'astra_settings_meta_box' , 'product' , 'side' );
+}
+		
+   add_action( 'add_meta_boxes_product' , 'dv_remove_product_custom_fields' );
