@@ -129,5 +129,19 @@ function dv_remove_tools_menu_item() {
     if ( ! $user->has_cap( 'manage_options' ) ) {
         remove_menu_page( 'tools.php' ); //to know the slug just hover it and check the link address
     }
+    if( ! $user->has_cap( 'update_core' ) ){ //shop manager doesn't have this cap, so use this 
+	remove_submenu_page('woocommerce','wc-addons');
+	remove_submenu_page('woocommerce','wc-status');
+    }
 }
 add_action( 'admin_menu', 'dv_remove_tools_menu_item' );
+
+//Remove cap from role
+
+function remove_shopmanager_list_users() {
+ 
+    // get_role returns an instance of WP_Role.
+    $role = get_role( 'shop_manager' );
+    $role->remove_cap( 'list_users' );
+}
+add_action( 'init', 'remove_shopmanager_list_users' );
